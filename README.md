@@ -5,7 +5,6 @@ The goal is to implement an efficient and accurate search engine sample website.
 # Technology used
 
 * Django - 2.1.3
-* django-crispy-forms
 * Python 3.6.6
 * virtualenv
 * Faker
@@ -15,4 +14,4 @@ The goal is to implement an efficient and accurate search engine sample website.
 * Apache2 Webserver
 
 #
-  Once complete, feel free to use for your own reasons.
+  Once complete, feel free to use for your own needs.
