@@ -1,4 +1,4 @@
-# My Search Site
+﻿# My Search Site
 
 The goal is to implement an efficient and accurate search engine sample website.
 
