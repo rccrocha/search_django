@@ -41,13 +41,18 @@ Install Django requirements:
 
 In the folder where manage.py file is in, type:
 
+* (venv) user@localmachine: python manage.py migrate
+* (venv) user@localmachine: python manage.py collectstatic
 * (venv) user@localmachine: python manage.py runserver
 
 The default address will be http://127.0.0.1:8000
 
 Once in the website, sign up to see the search page.
 As the database is yet to be populate, you won't be able to search much.
-If you would like to access the Django Admin page, you will have to type in the command line:
+So, in order to see any functionality, create a many users as you like and change their roles in the Django Admin page.
+To access the Django Admin page, you will have to create a super user by typing:
 
 * (venv) user@localmachine: python manage.py createsuperuser
+
+Now, you can start adding users and changing or giving permissions/roles to them at the Django Admin page.
 
