@@ -11,10 +11,9 @@ The goal is to implement an efficient and accurate search engine sample website.
 * SQLite3 (it will be replaced by PostgreSQL later on)
 * Bootstrap 4
 * Xubuntu 18.04
-* Apache2 Webserver
 
 #
-Once complete, feel free to use for your own needs.
+Once completed, feel free to use for your own needs.
 
 # Setup
 
@@ -27,7 +26,7 @@ Download the repository as zip file or choose a folder and type:
 
 * user@localmachine: git clone https://github.com/rccrocha/search_django
 
-Create a virtual environment (I like to use virtualenv):
+Create a virtual environment:
 
 * user@localmachine: virtualenv venv -p python3
 
@@ -49,10 +48,10 @@ The default address will be http://127.0.0.1:8000
 
 Once in the website, sign up to see the search page.
 As the database is yet to be populate, you won't be able to search much.
-So, in order to see any functionality, create a many users as you like and change their roles in the Django Admin page.
+So, in order to see any functionality, create as many users as you like and change their roles in the Django Admin page.
 To access the Django Admin page, you will have to create a super user by typing:
 
 * (venv) user@localmachine: python manage.py createsuperuser
 
-Now, you can start adding users and changing or giving permissions/roles to them at the Django Admin page.
+Now, you can start adding users and changing or giving permissions/roles to them at the Django Admin page. Also, you can create groups in the Django Admin page and assign the users to it.
 
