@@ -10,49 +10,21 @@
 
 		<title>{% block title %}My Search Site{% endblock %}</title>
 	</head>
+
+	<style type="text/css">
+
+		.asteriskField {
+			display: none;
+		}
+
+	</style>
+
 	<body>
 
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-			<div class="container">
-				<a class="navbar-brand" href="#">My Search Site</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-				</button>
+	{% include 'navbar.html' %}
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					{% if user.is_authenticated %}
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="{% url 'home' %}">Home</a>
-						</li>
-
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							{{ user.username }}
-							</a>
-							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
-							</div>
-						</li>
-					</ul>
-						{% else %}
-
-					<form class="form-inline my-2 my-lg-0">
-						<a href="{% url 'signup' %}" class="btn btn-secondary">Sign up</a>
-						<a href="{% url 'login' %}" class="btn btn-primary ml-3">Log in</a>
-					</form>
-						{% endif %}
-				</div>
-			</div>
-		</nav>
-
-
-	<div class="container">
-		{% block content %}
-		{% endblock %}
-	</div>
+	{% block content %}
+	{% endblock %}
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->

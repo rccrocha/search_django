@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load widget_tweaks %}
+{% block title %}Search | {{ block.super }}{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="row content">
+        <div class="col-sm-3 col-md-3">
+            <form method="get">
+                <h4 style="margin-top: 0">Filter</h4>
+                <div class="row">
+                    <div class="form-group">
+                      {{ filter.form.username.label_tag }}
+                      {% render_field filter.form.username class="form-control" %}
+                    </div>
+                    <div class="form-group">
+                      {{ filter.form.first_name.label_tag }}
+                      {% render_field filter.form.first_name class="form-control" %}
+                    </div>
+                    <div class="form-group">
+                      {{ filter.form.last_name.label_tag }}
+                      {% render_field filter.form.last_name class="form-control" %}
+                    </div>
+                    <div class="form-group">
+                      {{ filter.form.year_joined.label_tag }}
+                      {% render_field filter.form.year_joined class="form-control" %}
+                    </div>
+                    <div class="form-group">
+                      {{ filter.form.groups.label_tag }}
+                        <div>
+                          {% for choice in filter.form.groups %}
+                        <label class="checkbox-inline">
+                          {{ choice.tag }} {{ choice.choice_label }}
+                        </label>
+                          {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-search"></span> Search
+                    </button>
+            </form>
+        </div>
+
+        <div class="col-sm-9">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Date joined</th>
+                        <th>Groups</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in filter.qs %}
+                    <tr>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.date_joined }}</td>
+                        <td>
+                            {% for group in user.groups.all %}
+                            {{ group }}
+                            {% empty %}
+                        <em class="text-muted">No group</em>
+                            {% endfor %}
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="5">No data</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!-- 	<div class="row content">
+		<div class="col-sm-3 sidenav">
+			<h2 style="text-align: center;">Category</h2>
+			<hr>
+			<ul>
+				<select class="custom-select custom-select-lg mb-3">
+					<option selected>Products</option>
+					<option value="1">One</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+				</select>
+			</ul>
+			<ul>
+				<select class="custom-select custom-select-lg mb-3">
+					<option selected>Countries</option>
+					<option value="1">One</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+				</select>
+			</ul>
+		</div>
+
+		<div class="col-sm-9">
+			<h2 style="text-align: center;">Results</h2>
+			<hr>
+		</div> -->

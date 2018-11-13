@@ -5,7 +5,8 @@ from my_search_site.core import views
 
 urlpatterns = [
 	path('', views.home, name='home'),
+	path('search/', views.search, name='search'),
 	path('signup/', views.signup, name='signup'),
 	path('accounts/', include('django.contrib.auth.urls')),
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name="admin"),
 ]

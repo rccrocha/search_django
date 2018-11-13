@@ -2,7 +2,9 @@
 {% block title %}Home | {{ block.super }}{% endblock %}
 {% block content %}	
 
+<div class="container">
 	<h2>Homepage</h2>
-	<p>Welcome to My Search Site, {% if user.is_authenticated %}{{ user.username }}{% else %} visitor{% endif%}!</p>
+	<p>Welcome to My Search Site, {% if user.is_authenticated %}{{ user.username.capitalize }}{% else %} visitor{% endif%}!</p>
+</div>
 
 {% endblock %}
