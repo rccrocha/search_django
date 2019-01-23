@@ -4,7 +4,7 @@ The goal is to implement an efficient and accurate search engine sample website.
 
 # Technology used
 
-* Django - 2.1.3
+* Django - 2.1.5
 * Python 3.6.6
 * virtualenv
 * Bootstrap 4
